@@ -1,0 +1,12 @@
+<div class="form__container">
+  <input
+    [formControl]="control"
+    placeholder="{{ placeholder }}"
+    type="{{ typeInput }}"
+    class="form__field"
+  />
+
+  <label class="form__label">
+    <ng-content></ng-content>
+  </label>
+</div>

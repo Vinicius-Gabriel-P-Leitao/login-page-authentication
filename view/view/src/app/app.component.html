@@ -1,0 +1,28 @@
+<div class="container">
+  <app-image-container
+    [image-link]="'https://i.postimg.cc/wBzmzSwR/desenho-corporativo.avif'"
+    [image-alt]="'desenho-corporativo'"
+  />
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" style="position: relative">
+    <div class="form__group">
+      <app-input
+        [placeholder]="'username'"
+        [form-control]="getFormControl(form.get('username'))"
+        [type-input]="'text'"
+      >
+        <mat-icon aria-hidden="false" fontIcon="account_circle" />
+        <span>username</span>
+      </app-input>
+      <app-input
+        [placeholder]="'password'"
+        [form-control]="getFormControl(form.get('password'))"
+        [type-input]="'password'"
+      >
+        <mat-icon aria-hidden="false" fontIcon="vpn_key" />
+        <span>password</span>
+      </app-input>
+    </div>
+
+    <button app-button onsubmit="onSubmit()">Login</button>
+  </form>
+</div>

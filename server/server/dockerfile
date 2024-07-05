@@ -6,7 +6,7 @@ COPY src /app/src
 COPY pom.xml /app
 
 WORKDIR /app
-RUN mvn clean package
+RUN mvn clean package -X
 
 # .env file
 ARG POSTGRES_DB

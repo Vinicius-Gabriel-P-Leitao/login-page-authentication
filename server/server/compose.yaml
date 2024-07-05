@@ -12,7 +12,7 @@ services:
     networks:
       - net-login-page-authentication
 
-  server:
+  server-api:
     build:
       dockerfile: dockerfile
     environment:

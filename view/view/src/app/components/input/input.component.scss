@@ -1,0 +1,54 @@
+@import "../../../styles.scss";
+
+.form__container {
+  position: relative;
+  width: 100%;
+  margin-top: 20px;
+
+  .form__field {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid $gray;
+    outline: 0;
+    font-size: 0.8rem;
+    color: $white;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+    position: relative;
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &:placeholder-shown ~ .form__label {
+      font-size: 1.2rem;
+      top: 20px;
+      cursor: text;
+    }
+
+    &:focus,
+    &:not(:placeholder-shown) {
+      border-bottom: 3px solid $primary;
+    }
+
+    &:focus ~ .form__label,
+    &:not(:placeholder-shown) ~ .form__label {
+      font-size: 1rem;
+      top: -10px;
+      color: $primary;
+    }
+  }
+
+  .form__label {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    bottom: 60px;
+    transition: 0.2s ease all;
+    font-size: 0.6rem;
+    color: $gray;
+    pointer-events: none;
+  }
+}
