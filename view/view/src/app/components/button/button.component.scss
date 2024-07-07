@@ -1,6 +1,7 @@
 :host {
   border: none;
   margin: 20px;
+  cursor: pointer;
 
   a {
     display: block;
@@ -23,6 +24,50 @@
     z-index: 2;
   }
 
+  // Valor padrão caso a classe não seja inserida
+  a:after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #ff003b;
+    transition: all 0.35s;
+  }
+
+  a:hover {
+    color: #fff;
+  }
+
+  a:hover:after {
+    width: 100%;
+  }
+}
+
+// Botão muda a cor após hover de acordo com a classe
+:host(.primary) {
+  a:after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #2bff00;
+    transition: all 0.35s;
+  }
+
+  a:hover {
+    color: #fff;
+  }
+
+  a:hover:after {
+    width: 100%;
+  }
+}
+
+:host(.secondary) {
   a:after {
     position: absolute;
     content: "";
