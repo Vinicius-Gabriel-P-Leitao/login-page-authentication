@@ -22,9 +22,9 @@
       color: transparent;
     }
 
-    &:placeholder-shown ~ .form__label {
+    &:placeholder-shown~.form__label {
       font-size: 1.2rem;
-      top: 20px;
+      top: 12px;
       cursor: text;
     }
 
@@ -33,8 +33,8 @@
       border-bottom: 3px solid $primary;
     }
 
-    &:focus ~ .form__label,
-    &:not(:placeholder-shown) ~ .form__label {
+    &:focus~.form__label,
+    &:not(:placeholder-shown)~.form__label {
       font-size: 1rem;
       top: -10px;
       color: $primary;
@@ -45,7 +45,7 @@
     position: absolute;
     display: flex;
     align-items: center;
-    bottom: 60px;
+    bottom: 100%;
     transition: 0.2s ease all;
     font-size: 0.6rem;
     color: $gray;
