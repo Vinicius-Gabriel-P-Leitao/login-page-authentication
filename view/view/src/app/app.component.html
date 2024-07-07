@@ -1,9 +1,5 @@
 <div class="container">
-  <app-image-container
-    [image-link]="'https://i.postimg.cc/wBzmzSwR/desenho-corporativo.avif'"
-    [image-alt]="'desenho-corporativo'"
-  />
-  <form [formGroup]="form" (ngSubmit)="onSubmit()" style="position: relative">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" (reset)="onClean()">
     <div class="form__group">
       <app-input
         [placeholder]="'username'"
@@ -23,6 +19,7 @@
       </app-input>
     </div>
 
-    <button app-button onsubmit="onSubmit()">Login</button>
+    <button app-button onsubmit="onSubmit()" class="primary">Login</button>
+    <button app-button onreset="onClean()" class="secondary">Cancelar</button>
   </form>
 </div>
