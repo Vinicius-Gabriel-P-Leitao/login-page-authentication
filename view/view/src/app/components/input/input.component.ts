@@ -1,6 +1,17 @@
 import { Component, Input } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
+/**
+ * Componente de input, recebe como parâmetros o tipo de input, placeholder e o control do formControl
+ *
+ * Forma de usar:
+ * <app-input
+ *  [typeInput]="'email'"
+ *  [placeholder]="'email'"
+ *  [formControl]="form.controls['email']"
+ * >
+ * </app-input>
+ */
 @Component({
   selector: 'app-input',
   standalone: true,
