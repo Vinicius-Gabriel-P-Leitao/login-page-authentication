@@ -1,3 +1,35 @@
-Hello
+<div class="container">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" (reset)="onClean()">
+    <div class="form__group">
+      <app-input
+        [placeholder]="'username'"
+        [form-control]="getFormControl(form.get('username'))"
+        [type-input]="'text'"
+      >
+        <mat-icon aria-hidden="false" fontIcon="account_circle" />
+        <span>username</span>
+      </app-input>
 
-{{ register() }}
+      <app-input
+        [placeholder]="'password'"
+        [form-control]="getFormControl(form.get('password'))"
+        [type-input]="'password'"
+      >
+        <mat-icon aria-hidden="false" fontIcon="vpn_key" />
+        <span>password</span>
+      </app-input>
+
+      <div class="container">
+        <div class="select">
+          <select name="roles" id="user-role" formControlName="role">
+            <option value="ADMIN">ADMIN</option>
+            <option value="DEFAULT">DEFAULT</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <button app-button onsubmit="onSubmit()" class="primary">Registrar</button>
+    <button app-button onreset="onClean()" class="secondary">Cancelar</button>
+  </form>
+</div>
