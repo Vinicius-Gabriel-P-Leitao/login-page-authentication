@@ -1,0 +1,13 @@
+services:
+  angular-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8090:80"
+    networks:
+      - net-login-page-authentication
+
+networks:
+  net-login-page-authentication:
+    driver: bridge
